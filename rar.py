@@ -16,11 +16,12 @@ def unrar(base_path, unPathPrefix, ifDelete):
             z.extractall(base_path + "/Unrar-" + unPathPrefix + "/" + path[0:-4])
             z.close()
         except IsADirectoryError:
-            ifDelete = "n"
             print("该文件不需要解压")
+            continue
         except Exception:
-            ifDelete = "n"
             print(path[0:-4] + "该文件有误")
+            print("该文件可能是zip等其他格式的压缩文件")
+            continue
 
         if ifDelete == "y":
             try:
