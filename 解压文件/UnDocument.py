@@ -1,6 +1,6 @@
-from Unzipped_script.tar import Untar
-from Unzipped_script.zip import *
-from Unzipped_script.rar import *
+from 解压文件.Unzipped_script.rar import Unrar
+from 解压文件.Unzipped_script.tar import Untar
+from 解压文件.Unzipped_script.zip import UnZip
 
 
 def choose_fun():
