@@ -19,17 +19,18 @@ def UnZip(base_path, unPathPrefix, ifDelete):
         except IsADirectoryError:
             print("该文件不需要解压")
             continue
-        except Exception:
-            print(path[0:-4] + "该文件有误")
-            print("该文件可能是Rar等其他格式的压缩文件")
+        except Exception as e:
+            # print(path[0:-4] + "该文件有误")
+            # print("该文件可能是Rar等其他格式的压缩文件")
+            print(e)
             continue
 
         if ifDelete == "y":
             try:
                 os.remove(full_path)  # 删除源文件
                 print("源文件-" + path[0:-4] + "\n已删除")
-            except Exception:
-                print("文件异常")
+            except Exception as e:
+                print(e)
 
 
 
